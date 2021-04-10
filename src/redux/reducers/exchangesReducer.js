@@ -1,7 +1,7 @@
 import {GET_EXCHANGES} from '../actionTypes';
 
 const InitiateState = {
-    exchangesList: ['dummy','dummy2'],
+    exchangesList: [],
     loading: true
 }
 

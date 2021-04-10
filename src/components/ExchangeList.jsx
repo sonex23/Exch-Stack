@@ -9,8 +9,7 @@ const ExchangeList = () => {
         <>
         <h1>ExchangeList</h1>
         <hr/>
-        {console.log(Exchanges)}
-        <p>{Exchanges}</p>
+        <p>{console.log(Exchanges)}</p>
         </>
     )
 }
