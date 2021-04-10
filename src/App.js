@@ -10,6 +10,8 @@ import exchangeActions from './redux/actions/exchangeActions';
 import tickersActions from './redux/actions/tickersActions';
 import ExchangesList from './components/ExchangeList';
 import TickerList from './components/TickerList';
+import eodActions from './redux/actions/eodActions';
+import EodData from './components/EodData';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,11 +27,13 @@ function App() {
 
     //API TICKERS BY EXCHANGE CODE
     //dispatch(tickersActions.getTickersByExchangeCode('XIDX'))
+
+    //API EOD BY EMITEN/TICKERS CODE AND EXCHANGE CODE
+    dispatch(eodActions.getEodByEmitenSymbolsAndExchange('BBCA','XIDX'))
   })
 
   return (
     <div className="App">
-      <TickerList/>
     </div>
   );
 }
