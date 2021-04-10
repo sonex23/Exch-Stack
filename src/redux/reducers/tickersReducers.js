@@ -1,4 +1,4 @@
-import {GET_TICKERS} from '../actionTypes';
+import {GET_TICKERS, GET_ALL_TICKERS} from '../actionTypes';
 
 const InitiateState = {
     tickersList: [],
@@ -8,6 +8,11 @@ const InitiateState = {
 const tickersReducer = (state = InitiateState, action) =>{
     switch (action.type) {
         case GET_TICKERS:
+            return {
+                tickersList: action.payload,
+                loading:false,
+            }
+        case GET_ALL_TICKERS:
             return {
                 tickersList: action.payload,
                 loading:false,
