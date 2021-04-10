@@ -29,7 +29,7 @@ function App() {
     //dispatch(tickersActions.getTickersByExchangeCode('XIDX'))
 
     //API EOD BY EMITEN/TICKERS CODE AND EXCHANGE CODE
-    dispatch(eodActions.getEodByEmitenSymbolsAndExchange('BBCA','XIDX'))
+    //dispatch(eodActions.getEodByEmitenSymbolsAndExchange('BBCA','XIDX'))
   })
 
   return (

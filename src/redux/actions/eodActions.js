@@ -18,8 +18,25 @@ const getEodByEmitenSymbolsAndExchange = (emiten,exchange) => async (dispatch) =
     }
 }
 
+const getEodByEmitenSymbols = (emiten) => async (dispatch) =>{
+    try {
+        const res = await Axios({
+            method: 'GET',
+            url: `eod?access_key=${apiKey}&symbols=${emiten}`,
+        });
+
+        dispatch({
+            type: GET_EOD,
+            payload: res.data.data
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const eodActions = {
-    getEodByEmitenSymbolsAndExchange
+    getEodByEmitenSymbolsAndExchange,
+    getEodByEmitenSymbols
 }
 
 export default eodActions;
