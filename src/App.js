@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     //fetch API and Store data to Redux
     // API EXCHANGES LIST
-    //dispatch(exchangeActions.getExchanges())
+    // dispatch(exchangeActions.getExchanges());
     //API ALL TICKERS LIST
     //dispatch(tickersActions.getAllTickers())
     //API TICKERS BY EXCHANGE CODE
