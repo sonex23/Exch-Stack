@@ -13,6 +13,9 @@ import TickerList from './components/TickerList';
 import eodActions from './redux/actions/eodActions';
 import EodData from './components/EodData';
 
+//test chart
+import EodChart from './components/EodChart';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -34,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <EodData/>
     </div>
   );
 }
