@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from "react-bootstrap";
 import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 const TableTickerList= () => {
     const headTicker = useSelector((state) => state.headTicker.headTickerList);
@@ -13,7 +14,7 @@ const TableTickerList= () => {
                     <thead>
                         <tr>
                             <th>Emiten</th>
-                            <th>Exchanges</th>
+                            <th>Exchange</th>
                             <th>Open</th>
                             <th>Close</th>
                             <th>Volume</th>
@@ -34,7 +35,9 @@ const TableTickerList= () => {
                         })}
                         <tr>
                             <td colSpan="5">
-                                <Button variant="primary" href="#" className="w-100">See all Ticker List</Button>
+                                <Link to="/emiten-list">
+                                 <Button variant="primary" className="w-100">See all Ticker List</Button>
+                                </Link>
                             </td>
                         </tr>
                     </tbody>

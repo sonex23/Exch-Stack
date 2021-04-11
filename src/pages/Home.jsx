@@ -5,7 +5,7 @@ import TableExchange from '../components/TableExchange';
 import TableTickerList from '../components/TableTickerList';
 
 
-function Home() {
+const Home =()=> {
     return (
         <div>
             <Header/>

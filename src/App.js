@@ -13,6 +13,9 @@ import eodActions from "./redux/actions/eodActions";
 import EodData from "./components/EodData";
 
 import Home from "./pages/Home";
+import Eod from "./pages/Eod";
+import Markets from "./pages/Markets";
+import Tickers from "./pages/Tickers";
 
 //test chart
 import EodChart from './components/EodChart';
@@ -34,16 +37,27 @@ function App() {
     //API 5 Head Exchange List
     dispatch(headExchangeAction.get5HeadExchanges());
     dispatch(headTickerAction.get5HeadTicker())
-  });
+  },[]);
 
   return (
     <div className="App">
       <Router>
+      <div>
         <Switch>
+        <Route path="/markets">
+            <Markets/>
+          </Route>
+          <Route path="/emiten-list">
+            <Tickers/>
+          </Route>
+          <Route path="/details-emiten">
+            <Eod/>
+          </Route>
           <Route path="/">
             <Home/>
           </Route>
         </Switch>
+        </div>
       </Router>
     </div>
   );
