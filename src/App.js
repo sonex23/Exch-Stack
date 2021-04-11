@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import headExchangeAction from './redux/actions/headExchangeAction'
+import headExchangeAction from "./redux/actions/headExchangeAction";
 import exchangeActions from "./redux/actions/exchangeActions";
 import tickersActions from "./redux/actions/tickersActions";
 import ExchangesList from "./components/ExchangeList";
@@ -18,7 +18,7 @@ import Markets from "./pages/Markets";
 import Tickers from "./pages/Tickers";
 
 //test chart
-import EodChart from './components/EodChart';
+import EodChart from "./components/EodChart";
 import headTickerAction from "./redux/actions/headTickerAction";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     //fetch API and Store data to Redux
     // API EXCHANGES LIST
-    // dispatch(exchangeActions.getExchanges());
+    dispatch(exchangeActions.getExchanges());
     //API ALL TICKERS LIST
     //dispatch(tickersActions.getAllTickers())
     //API TICKERS BY EXCHANGE CODE
@@ -36,27 +36,27 @@ function App() {
     //dispatch(eodActions.getEodByEmitenSymbolsAndExchange('BBCA','XIDX'))
     //API 5 Head Exchange List
     dispatch(headExchangeAction.get5HeadExchanges());
-    dispatch(headTickerAction.get5HeadTicker())
-  },[]);
+    dispatch(headTickerAction.get5HeadTicker());
+  }, []);
 
   return (
     <div className="App">
       <Router>
-      <div>
-        <Switch>
-        <Route path="/markets">
-            <Markets/>
-          </Route>
-          <Route path="/emiten-list">
-            <Tickers/>
-          </Route>
-          <Route path="/details-emiten">
-            <Eod/>
-          </Route>
-          <Route path="/">
-            <Home/>
-          </Route>
-        </Switch>
+        <div>
+          <Switch>
+            <Route path="/markets">
+              <Markets />
+            </Route>
+            <Route path="/emiten-list">
+              <Tickers />
+            </Route>
+            <Route path="/details-emiten">
+              <Eod />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
         </div>
       </Router>
     </div>

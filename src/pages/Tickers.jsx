@@ -5,6 +5,8 @@ const Tickers = () =>{
     return (
         <div>
             <Header/>
+            <h1>Emiten List</h1>
+            <hr/>
         </div>
     )
 }
