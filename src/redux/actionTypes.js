@@ -3,3 +3,7 @@ export const GET_ALL_TICKERS = "GET_ALL_TICKERS";
 export const GET_TICKERS = "GET_TICKERS";
 export const GET_INTRADAY = "GET_INTRADAY";
 export const GET_EOD = "GET_EOD";
+export const GET_EXCHANGE_MIC = "GET_EXCHANGE_MIC";
+export const GET_TICKER_SYMBOL = "GET_TICKER_SYMBOL";
+export const GET_HEAD_EXCHANGES = "GET_HEAD_EXCHANGES";
+export const GET_HEAD_TICKERS = "GET_HEAD_TICKERS";
