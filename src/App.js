@@ -5,35 +5,29 @@ import { useDispatch } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import headExchangeAction from "./redux/actions/headExchangeAction";
+import headTickerAction from "./redux/actions/headTickerAction";
 import exchangeActions from "./redux/actions/exchangeActions";
-import tickersActions from "./redux/actions/tickersActions";
-import ExchangesList from "./components/ExchangeList";
-import TickerList from "./components/TickerList";
-import eodActions from "./redux/actions/eodActions";
-import EodData from "./components/EodData";
+//import eodActions from "./redux/actions/eodActions";
+
 
 import Home from "./pages/Home";
 import Eod from "./pages/Eod";
 import Markets from "./pages/Markets";
 import Tickers from "./pages/Tickers";
 
-//test chart
-import EodChart from "./components/EodChart";
-import headTickerAction from "./redux/actions/headTickerAction";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     //fetch API and Store data to Redux
+
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
-    //API ALL TICKERS LIST
-    //dispatch(tickersActions.getAllTickers());
-    //API TICKERS BY EXCHANGE CODE
-    //dispatch(tickersActions.getTickersByExchangeCode('XIDX'))
+ 
     //API EOD BY EMITEN/TICKERS CODE AND EXCHANGE CODE
     //dispatch(eodActions.getEodByEmitenSymbolsAndExchange('BBCA','XIDX'))
+
     //API 5 Head Exchange List
     dispatch(headExchangeAction.get5HeadExchanges());
     dispatch(headTickerAction.get5HeadTicker());
