@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom';
 import tickersActions from "../redux/actions/tickersActions";
+import tickerSymbolActions from '../redux/actions/tickerSymbolActions';
 
 const TableAllTicker= () => {
     const dispatch = useDispatch();
 
     const tickerList = useSelector((state) => state.tickers.tickersList);
     const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
+    const symbol = useSelector((state) => state.tickerSymbol.tickerSymbol);
 
     useEffect(()=>{
         dispatch(tickersActions.getTickersByExchangeCode(exchangeMic));
@@ -39,10 +42,26 @@ const TableAllTicker= () => {
                                     <td>{data.stock_exchange.country}</td>
                                     <td>{data.stock_exchange.city}</td>
                                     <td>{data.stock_exchange.website}</td>
-                                    <td><button className="btn btn-primary">EOD</button> <button className="btn btn-primary">Intraday</button></td>
+                                    <td>
+                                        <button 
+                                         className="btn btn-primary" 
+                                         onClick={(e)=>dispatch(tickerSymbolActions.storeSymbol(data.symbol))}
+                                        >
+                                        <Link to="/details-emiten" style={{ textDecoration: 'none', color: 'white' }}>
+                                        Daily
+                                        </Link>
+                                        </button>
+                                        <Link to=""> 
+                                        <button 
+                                        className="btn btn-primary" 
+                                        >Intraday</button>
+                                        </Link>
+                                    </td>
                                 </tr>
                             )
-                        })}
+                        })
+                        }
+                        {console.log(symbol)}
                     </tbody>
                 </table>
             </div>
