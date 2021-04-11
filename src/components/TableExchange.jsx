@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from "react-bootstrap";
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 const TableExchange = () => {
     const headExchanges = useSelector((state) => state.headExchange.headExchangesList);
     
@@ -32,7 +33,9 @@ const TableExchange = () => {
                         })}
                         <tr>
                             <td colSpan="5">
-                                <Button variant="primary" href="#" className="w-100">See all Exchange List</Button>
+                                <Link to="/markets">
+                                 <Button variant="primary" className="w-100">See all Exchange List</Button>
+                                </Link>
                             </td>
                         </tr>
                     </tbody>
