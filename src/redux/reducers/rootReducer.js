@@ -3,7 +3,9 @@ import tickersReducer from './tickersReducers';
 import eodReducer from './eodReducers';
 import intradayReducer from './intradayReducer';
 import exchangeMicReducer from './exchangeMicReducer';
-import tickerSymbolReducer from './tickerSymbolReducer.js'
+import tickerSymbolReducer from './tickerSymbolReducer.js';
+import headExchangeReducer from './headExchangeReducer';
+import headTickerReducer from './headTickerReducer';
 
 const rootReducer = {
     exchanges: exchangesReducer,
@@ -11,7 +13,9 @@ const rootReducer = {
     eod: eodReducer,
     intraday: intradayReducer,
     exchangeMic: exchangeMicReducer,
-    tickerSymbol: tickerSymbolReducer
+    tickerSymbol: tickerSymbolReducer,
+    headExchange: headExchangeReducer,
+    headTicker: headTickerReducer
 }
 
 export default rootReducer;
