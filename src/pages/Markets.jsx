@@ -15,12 +15,6 @@ const Markets = () =>{
                 </div>
                 <hr/>
                 <div className="row">
-                    <div className="col-4">
-                        <InputFilterExchange/>
-                    </div>
-                </div>
-                <hr/>
-                <div className="row">
                     <div className="col">
                         <TableAllExchange/>
                     </div>
