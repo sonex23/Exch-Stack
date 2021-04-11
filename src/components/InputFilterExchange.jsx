@@ -3,7 +3,6 @@ import {useSelector} from 'react-redux';
 
 const InputFilterExchange = () => {
     const exchangeList = useSelector((state)=>state.exchanges.exchangesList);
-    console.log(exchangeList);
     return (
         <div>
             <form>
