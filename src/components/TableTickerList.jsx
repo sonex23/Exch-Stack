@@ -21,15 +21,14 @@ const TableTickerList= () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {console.log(headTicker)}
                     {headTicker.map((data, index) =>{
                             return (
-                                <tr>
-                                    <td key={index}>{data.symbol}</td>
-                                    <td key={index}>{data.exchange}</td>
-                                    <td key={index}>${data.open}</td>
-                                    <td key={index}>${data.close}</td>
-                                    <td key={index}>${data.volume}</td>
+                                <tr key={index}>
+                                    <td>{data.symbol}</td>
+                                    <td>{data.exchange}</td>
+                                    <td>${data.open}</td>
+                                    <td>${data.close}</td>
+                                    <td>${data.volume}</td>
                                 </tr>
                             )
                         })}
