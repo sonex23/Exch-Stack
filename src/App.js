@@ -29,7 +29,7 @@ function App() {
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
     //API ALL TICKERS LIST
-    //dispatch(tickersActions.getAllTickers())
+    //dispatch(tickersActions.getAllTickers());
     //API TICKERS BY EXCHANGE CODE
     //dispatch(tickersActions.getTickersByExchangeCode('XIDX'))
     //API EOD BY EMITEN/TICKERS CODE AND EXCHANGE CODE

@@ -20,7 +20,7 @@ const TableAllExchange = () => {
                     <tbody>
                         {exchangesList.map((data, index) =>{
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{data.name}</td>
                                     <td>{data.acronym===''? 'OOTC': data.acronym}</td>
                                     <td>{data.mic}</td>

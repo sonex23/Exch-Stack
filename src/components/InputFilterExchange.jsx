@@ -1,17 +1,22 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import exchageMicActions from "../redux/actions/exchageMicActions";
 
 const InputFilterExchange = () => {
     const exchangeList = useSelector((state)=>state.exchanges.exchangesList);
-    console.log(exchangeList);
+    const dispatch = useDispatch();
     return (
         <div>
             <form>
-                <select name="filterByMic" id="filterByMic" className="form-control">
-                    <option value="all">  
-                        All Exchange
-                    </option>
-                    {exchangeList.map((exchange, index)=><option value={exchange.mic} key={index}>{exchange.name} ({exchange.mic})</option>)}
+                <select name="filterByMic" id="filterByMic" className="form-control" onChange={(e)=> dispatch(exchageMicActions.storeMIC(e.target.value))}>
+                    {exchangeList.map((exchange, index)=>
+                      <option 
+                      value={exchange.mic} 
+                      key={index} 
+                      >
+                        {exchange.name} ({exchange.mic})
+                      </option>)
+                        }
                 </select>
             </form>
         </div>
