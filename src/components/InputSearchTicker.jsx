@@ -10,7 +10,8 @@ const InputSearchTicker = () => {
     const dispatch = useDispatch();
     const handleSearch = (e) =>{
         e.preventDefault();
-        dispatch(tickersActions.getTickersByExchangeCodeAndTickerSymbol(searchValue,exchangeMic))
+        dispatch(tickersActions.getTickersByExchangeCodeAndTickerSymbol(searchValue,exchangeMic));
+        tmpActions.storedSearchValue('');
     }
     return (
         <div>

@@ -6,7 +6,7 @@ const getEodByEmitenSymbolsAndExchange = (emiten,exchange) => async (dispatch) =
     try {
         const res = await Axios({
             method: 'GET',
-            url: `eod?access_key=${apiKey}&symbols=${emiten}&exchange=${exchange}`,
+            url: `eod?access_key=${apiKey}&symbols=${emiten}&exchange=${exchange}&limit=365`,
         });
 
         dispatch({
