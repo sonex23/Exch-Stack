@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Navbar} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 const NavbarStyled = styled(Navbar)`
@@ -9,11 +9,17 @@ const NavbarStyled = styled(Navbar)`
 
 function Header() {
     return (
-        <NavbarStyled variant="dark" className="mb-5">
+        <NavbarStyled variant="dark" expand="lg">
             <div className="container">
-                <Link to="/" >
-                    <Navbar.Brand>Exch - Stack</Navbar.Brand>
-                </Link>
+                <Navbar.Brand><Link to="/" className="text-white">Exch - Stack</Link></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto">
+                        <Nav.Link><Link to="/" className="text-white mx-3">Home</Link></Nav.Link>
+                        <Nav.Link><Link to="/markets" className="text-white mx-3">Markets</Link></Nav.Link>
+                        <Nav.Link><Link to="/emiten-list" className="text-white mx-3">Emiten</Link></Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
             </div>
         </NavbarStyled>
     )
