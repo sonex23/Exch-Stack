@@ -21,6 +21,10 @@ const tickersReducer = (state = InitiateState, action) =>{
             return {
                 tickersList: action.payload,
             }
+        case "LIMITED_TICKERS":
+            return {
+                tickersList: action.payload,
+            }
         default:
             return state
     }

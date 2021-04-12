@@ -31,10 +31,28 @@ const getTickersByExchangeCode = (code) => async (dispatch) =>{
         })
         
     } catch (error) {
-        
+        console.log(error)
     }
 }
 
+const getLimitedTIcker = (code, start) => async (dispatch) => {
+    try {
+        const res = await Axios({
+            method: 'GET',
+            url: `tickers?access_key=${apiKey}&exchange=${code}&offset=${start}&limit=15`,
+        });
+
+        dispatch({
+            type: "LIMITED_TICKERS",
+            payload: res.data.data
+        })
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//Search
 const getTickersByExchangeCodeAndTickerSymbol=(search,mic)=> async (dispatch) =>{
     try {
         const res = await Axios({
@@ -52,10 +70,13 @@ const getTickersByExchangeCodeAndTickerSymbol=(search,mic)=> async (dispatch) =>
 }
 
 
+
+
 const tikersActions = {
     getAllTickers,
     getTickersByExchangeCode,
     getTickersByExchangeCodeAndTickerSymbol,
+    getLimitedTIcker,
 }
 
 export default tikersActions;
