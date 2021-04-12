@@ -1,21 +1,31 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import eodActions from "../redux/actions/eodActions";
 import CanvasJSReact from './charts/canvasjs.stock.react';
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
 
 const EodData = () => {
+  const dispatch = useDispatch();
+  
+  
+  const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
+  const symbol = useSelector((state) => state.tickerSymbol.tickerSymbol);
 
-    const eod = useSelector((state) => state.eod.eodList);
+  useEffect(()=>{
+    dispatch(eodActions.getEodByEmitenSymbolsAndExchange(symbol,exchangeMic))
+  },[])
+
+  const eod = useSelector((state) => state.eod.eodList);
+    
     const dataPoints1 = eod.map((data, idx)=>{
         return {
-            'dp1' : {
             'x': new Date(data.date),
             'y': [
                 Number(data.open),
                 Number(data.high),
                 Number(data.low),
                 Number(data.close)
-            ]},
+            ],
         }
     })
     const dataPoints2 = eod.map((data, idx)=>{
@@ -35,10 +45,10 @@ const EodData = () => {
     const options = {
         theme: "light2",
         title:{
-          text:"PT BANK CENTRAL ASIA TBK"
+          text:`${symbol}`
         },
         subtitles: [{
-          text: "Stock Shares"
+          text: "Stock Shares and Volume"
         }],
         charts: [{
           axisX: {
@@ -57,14 +67,14 @@ const EodData = () => {
           },
           axisY: {
             title: "Shares Price",
-            prefix: "IDR",
+            prefix: "$",
             tickLength: 0
           },
           toolTip: {
             shared: true
           },
           data: [{
-            name: "Price (in IDR)",
+            name: "Price (in USD)",
             yValueFormatString: "$#,###.##",
             type: "candlestick",
             dataPoints : dataPoints1
@@ -105,14 +115,15 @@ const EodData = () => {
     
       const containerProps = {
         width: "100%",
-        height: "450px",
+        height: "50%",
         margin: "auto"
       };
 
 
     return (
-        <div> 
+        <div className="mt-3"> 
         <div>
+          {console.log(dataPoints1)}
           {
             // Reference: https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator
             dataPoints1 && 

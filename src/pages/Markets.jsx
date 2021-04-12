@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/Header';
-import InputFilterExchange from '../components/InputFilterExchange';
+import Footer from '../components/Footer';
 import TableAllExchange from '../components/TableAllExchange';
 
 const Markets = () =>{
     return (
         <div>
             <Header/>
-            <div className="container">
+            <div className="container mt-3">
                 <div className="row">
                     <div className="col">
                         <h1 className="text-center">Exchange List</h1>
@@ -20,6 +20,7 @@ const Markets = () =>{
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
