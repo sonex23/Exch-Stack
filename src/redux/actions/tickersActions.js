@@ -35,9 +35,27 @@ const getTickersByExchangeCode = (code) => async (dispatch) =>{
     }
 }
 
+const getTickersByExchangeCodeAndTickerSymbol=(search,mic)=> async (dispatch) =>{
+    try {
+        const res = await Axios({
+            method: 'GET',
+            url: `tickers?access_key=${apiKey}&search=${search}&xchange=${mic}`,
+        });
+
+        dispatch({
+            type: "SEARCH_TICKERS",
+            payload: res.data.data
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 const tikersActions = {
     getAllTickers,
-    getTickersByExchangeCode
+    getTickersByExchangeCode,
+    getTickersByExchangeCodeAndTickerSymbol,
 }
 
 export default tikersActions;
