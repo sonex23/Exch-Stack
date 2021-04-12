@@ -5,7 +5,8 @@ const FooterDiv = styled.div`
   color: white;
   background-color: #007bff;
   padding-top: 30px;
-  position: relative;
+  position: absolute;
+  margin-top:auto;
   bottom: 0;
   width: 100%;
   text-align: left;
@@ -19,12 +20,13 @@ const Footer = () => {
           <div className="col-12 col-md-4 mb-4">
             <h4>Exch Stack</h4>
             <span>Analytics with Easy Ways</span>
-            <br></br>
+            <br/> <br/>
+            <img src="img/Exch-Stack-Header.png" alt="Logo" width="50%"/>
           </div>
           <div className="col-12 col-md-4 mb-4">
             <h4>Contact Us</h4>
             <span>
-              exchstack33@Analytics.com
+              contact@exchstack.com
               <br></br>
               021 - 222 - 3334
               <br></br>

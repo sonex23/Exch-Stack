@@ -1,19 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
+import {Button} from "react-bootstrap";
+import tikersActions from '../redux/actions/tickersActions';
 import tickersActions from "../redux/actions/tickersActions";
 import tickerSymbolActions from '../redux/actions/tickerSymbolActions';
 
 const TableAllTicker= () => {
     const dispatch = useDispatch();
+    const [counter, setCounter] = useState(0)
 
     const tickerList = useSelector((state) => state.tickers.tickersList);
     const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
     const symbol = useSelector((state) => state.tickerSymbol.tickerSymbol);
 
     useEffect(()=>{
-        dispatch(tickersActions.getTickersByExchangeCode(exchangeMic));
+        //dispatch(tickersActions.getTickersByExchangeCode(exchangeMic));
+        setCounter(0)
+        dispatch(tikersActions.getLimitedTIcker(exchangeMic,counter.start))
     },[exchangeMic])
+
+     const nextPage=()=>{
+        setCounter(counter + 15)
+        console.log(counter)
+        dispatch(tikersActions.getLimitedTIcker(exchangeMic,counter))
+     }
+     const prevPage=()=>{
+        setCounter(counter - 15)
+        console.log(counter)
+        dispatch(tikersActions.getLimitedTIcker(exchangeMic,counter))
+     }
     
     return (
         <div>
@@ -28,7 +44,7 @@ const TableAllTicker= () => {
                             <th>Country</th>
                             <th>City</th>
                             <th>Website</th>
-                            <th>Action</th>
+                            <th>Chart</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,18 +67,20 @@ const TableAllTicker= () => {
                                         Daily
                                         </Link>
                                         </button>
-                                        <Link to=""> 
+                                        {/* <Link to=""> 
                                         <button 
                                         className="btn btn-primary" 
                                         >Intraday</button>
-                                        </Link>
+                                        </Link> */}
                                     </td>
                                 </tr>
                             )
                         })
                         }
-                        {console.log(symbol)}
+                        
                     </tbody>
+                    <Button variant="primary" className="w-50" onClick={prevPage}>Previous</Button>
+                    <Button variant="primary" className="w-50" onClick={nextPage}>Next</Button>
                 </table>
             </div>
         </div>

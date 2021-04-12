@@ -17,6 +17,14 @@ const tickersReducer = (state = InitiateState, action) =>{
                 tickersList: action.payload,
                 loading:false,
             }
+        case "SEARCH_TICKERS":
+            return {
+                tickersList: action.payload,
+            }
+        case "LIMITED_TICKERS":
+            return {
+                tickersList: action.payload,
+            }
         default:
             return state
     }

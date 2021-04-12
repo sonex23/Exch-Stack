@@ -24,9 +24,6 @@ function App() {
 
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
- 
-    //API EOD BY EMITEN/TICKERS CODE AND EXCHANGE CODE
-    //dispatch(eodActions.getEodByEmitenSymbolsAndExchange('BBCA','XIDX'))
 
     //API 5 Head Exchange List
     dispatch(headExchangeAction.get5HeadExchanges());

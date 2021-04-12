@@ -4,11 +4,21 @@ import Hero from '../components/Hero';
 import TableExchange from '../components/TableExchange';
 import TableTickerList from '../components/TableTickerList';
 import Footer from '../components/Footer';
+import styled from 'styled-components';
+
+const HomeStyled = styled.div`
+    min-height : 100vh;
+    position: relative;
+    padding-bottom : 200px;
+    @media screen and (max-width:576px){
+        padding-bottom: 500px;
+    }
+`;
 
 
 const Home = () => {
     return (
-        <div>
+        <HomeStyled>
             <Header />
             <Hero />
             <div className="container">
@@ -20,10 +30,9 @@ const Home = () => {
                         <TableTickerList />
                     </div>
                 </div>
-
             </div>
             <Footer />
-        </div>
+        </HomeStyled>
     )
 }
 
