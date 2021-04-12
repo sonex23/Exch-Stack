@@ -4,10 +4,17 @@ import Footer from '../components/Footer';
 import InputFilterExchange from '../components/InputFilterExchange';
 import InputSearchTicker from '../components/InputSearchTicker';
 import TableAllTicker from '../components/TableAllTicker';
+import styled from 'styled-components';
+
+const TickerStyled = styled.div`
+    min-height:100vh;
+    position:relative;
+    padding-bottom : 200px;
+`;
 
 const Tickers = () =>{
     return (
-        <div>
+        <TickerStyled>
             <Header/>
             <div className="container mt-3">
                 <div className="row">
@@ -25,14 +32,14 @@ const Tickers = () =>{
                     </div>
                 </div>
                 <hr/>
-                <div className="row mb-5">
+                <div className="row">
                     <div className="col">
                         <TableAllTicker/>
                     </div>
                 </div>
             </div>
             <Footer/>
-        </div>
+        </TickerStyled>
     )
 }
 
