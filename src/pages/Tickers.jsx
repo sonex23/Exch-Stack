@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import InputFilterExchange from '../components/InputFilterExchange';
 import TableAllTicker from '../components/TableAllTicker';
 
@@ -26,6 +27,7 @@ const Tickers = () =>{
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

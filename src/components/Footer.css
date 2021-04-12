@@ -6,13 +6,8 @@
     position: relative;
     bottom: 0;
     width: 100%;
-    text-align: left;
-
-    
+    text-align: left; 
 }
 .list{
     list-style-type: none;
-    
-    
-    
 }

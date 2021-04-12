@@ -28,7 +28,7 @@ const TableAllTicker= () => {
                             <th>Country</th>
                             <th>City</th>
                             <th>Website</th>
-                            <th>Aksi</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
