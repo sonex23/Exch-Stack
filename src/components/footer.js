@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './Footer.css';
+import './Footer.css';
 
 const Footer = () => {
     return (
@@ -9,22 +9,28 @@ const Footer = () => {
                     {/* column */}
                     <div className='col'>
                         <h4>Exch Stack</h4>
-                        <ul className='list'>
-                            <li>Analytics with Easy Ways</li>
-                        </ul>
+                        <span className='list'>
+                            Analytics with Easy Ways
+                        </span>
+                        <br></br>
                     </div>
                     <div className='col'>
                         <h4>Contact Us</h4>
-                        <ul className='list'>
-                            <li>exchstack33@Analytics.com</li>
-                            <li>021 - 222 - 3334</li>
-                            <li>Jakarta, Indonesia</li>
-                        </ul>
+                        <span className='list'>
+                            exchstack33@Analytics.com
+                            <br></br>
+                            021 - 222 - 3334
+                            <br></br>
+                            Jakarta, Indonesia
+                            <br></br>
+                        </span>
                     </div>
                     <div className='col'>
                         <h4>Our Social Media</h4>
-                        <ul className='list'>
-                        </ul>
+                        <span className='list'>
+                            <img src='img/instagram.png' width='60px'></img>
+                            <img src='img/facebook.png' width='55px'></img>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -5,11 +5,12 @@ const ExchangeList = () => {
 
     const Exchanges = useSelector((state) => state.exchanges.exchangesList)
 
+    console.log(Exchanges);
     return (
         <>
         <h1>ExchangeList</h1>
         <hr/>
-        <p>{console.log(Exchanges)}</p>
+        {/* <p>{console.log(Exchanges)}</p> */}
         </>
     )
 }
