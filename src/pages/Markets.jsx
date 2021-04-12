@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import InputFilterExchange from '../components/InputFilterExchange';
 import TableAllExchange from '../components/TableAllExchange';
 
 const Markets = () =>{
