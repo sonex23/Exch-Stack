@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="col-12 col-md-4 mb-4">
             <h4>Contact Us</h4>
             <span>
-              exchstack33@Analytics.com
+              contact@exchstack.com
               <br></br>
               021 - 222 - 3334
               <br></br>

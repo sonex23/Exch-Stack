@@ -6,7 +6,7 @@ import exchangeMicReducer from './exchangeMicReducer';
 import tickerSymbolReducer from './tickerSymbolReducer.js';
 import headExchangeReducer from './headExchangeReducer';
 import headTickerReducer from './headTickerReducer';
-
+import tmpReducer from './tmpReducer'
 const rootReducer = {
     exchanges: exchangesReducer,
     tickers: tickersReducer,
@@ -15,7 +15,8 @@ const rootReducer = {
     exchangeMic: exchangeMicReducer,
     tickerSymbol: tickerSymbolReducer,
     headExchange: headExchangeReducer,
-    headTicker: headTickerReducer
+    headTicker: headTickerReducer,
+    tmp: tmpReducer
 }
 
 export default rootReducer;
