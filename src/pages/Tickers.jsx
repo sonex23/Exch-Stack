@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InputFilterExchange from '../components/InputFilterExchange';
+import InputSearchTicker from '../components/InputSearchTicker';
 import TableAllTicker from '../components/TableAllTicker';
 
 const Tickers = () =>{
@@ -15,9 +16,12 @@ const Tickers = () =>{
                     </div>
                 </div>
                 <hr/>
-                <div className="row">
+                <div className="row justify-content-between">
                     <div className="col-4">
                         <span>Filter By Exchange : </span><InputFilterExchange/>
+                    </div>
+                    <div className="col-6">
+                        <span>Search Emiten : </span><InputSearchTicker/>
                     </div>
                 </div>
                 <hr/>
