@@ -121,7 +121,7 @@ const EodData = () => {
 
 
     return (
-        <div> 
+        <div className="mt-3"> 
         <div>
           {console.log(dataPoints1)}
           {
