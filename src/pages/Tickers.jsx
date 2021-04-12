@@ -25,7 +25,7 @@ const Tickers = () =>{
                     </div>
                 </div>
                 <hr/>
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col">
                         <TableAllTicker/>
                     </div>
