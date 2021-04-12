@@ -10,6 +10,10 @@ const TickerStyled = styled.div`
     min-height:100vh;
     position:relative;
     padding-bottom : 200px;
+
+    @media screen and (max-width:576px){
+        padding-bottom: 500px;
+    }
 `;
 
 const Tickers = () =>{
