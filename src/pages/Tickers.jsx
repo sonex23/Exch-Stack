@@ -1,26 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import InputFilterExchange from '../components/InputFilterExchange';
 import InputSearchTicker from '../components/InputSearchTicker';
 import TableAllTicker from '../components/TableAllTicker';
-import styled from 'styled-components';
-
-const TickerStyled = styled.div`
-    min-height:100vh;
-    position:relative;
-    padding-bottom : 200px;
-
-    @media screen and (max-width:576px){
-        padding-bottom: 500px;
-    }
-`;
 
 const Tickers = () =>{
     return (
-        <TickerStyled>
-            <Header/>
-            <div className="container mt-3">
+        <div>
+            <div className="mt-3">
                 <div className="row">
                     <div className="col">
                         <h1 className="text-center">Emiten List</h1>
@@ -42,8 +28,7 @@ const Tickers = () =>{
                     </div>
                 </div>
             </div>
-            <Footer/>
-        </TickerStyled>
+        </div>
     )
 }
 

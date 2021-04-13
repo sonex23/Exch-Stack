@@ -1,23 +1,10 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import TableAllExchange from '../components/TableAllExchange';
-import styled from 'styled-components';
-
-const MarketStyled = styled.div`
-    min-height:100vh;
-    position:relative;
-    padding-bottom:200px;
-    @media screen and (max-width:576px){
-        padding-bottom: 500px;
-    }
-`;
 
 const Markets = () =>{
     return (
-        <MarketStyled>
-            <Header/>
-            <div className="container mt-3">
+        <div>
+            <div className="mt-3">
                 <div className="row">
                     <div className="col">
                         <h1 className="text-center">Exchange List</h1>
@@ -30,8 +17,7 @@ const Markets = () =>{
                     </div>
                 </div>
             </div>
-            <Footer/>
-        </MarketStyled>
+        </div>
     )
 }
 

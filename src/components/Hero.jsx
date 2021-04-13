@@ -9,7 +9,7 @@ const StyledButton = styled(Button)`
 
 function Hero() {
     return (
-        <div className="container mb-5">
+        <div className="mb-5">
             <div className="row">
                 <div className="col-md-6 p-4">
                     <h1 className="display-4 mb-4">
