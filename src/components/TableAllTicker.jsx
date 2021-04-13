@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Button} from "react-bootstrap";
 import tikersActions from '../redux/actions/tickersActions';
-import tickersActions from "../redux/actions/tickersActions";
 import tickerSymbolActions from '../redux/actions/tickerSymbolActions';
 
 const TableAllTicker= () => {

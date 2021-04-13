@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import tickersActions from "../redux/actions/tickersActions";
 import tmpActions from '../redux/actions/tmpActions';
@@ -21,7 +21,7 @@ const InputSearchTicker = () => {
                     <input 
                      type="text" 
                      id="search" 
-                     placeholder="Emiten Name..." 
+                     placeholder="Emiten Name or Symbol" 
                      className="form-control"
                      onChange={(e)=>dispatch(tmpActions.storedSearchValue(e.target.value))}
                      value={searchValue}
