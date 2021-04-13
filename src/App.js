@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import headExchangeAction from "./redux/actions/headExchangeAction";
 import headTickerAction from "./redux/actions/headTickerAction";
 import exchangeActions from "./redux/actions/exchangeActions";
+import exchangeCountryAction from "./redux/actions/exchangeCountryAction";
 //import eodActions from "./redux/actions/eodActions";
 
 import Home from "./pages/Home";
@@ -37,6 +38,7 @@ function App() {
 
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
+    dispatch(exchangeCountryAction.getCountryExchange());
 
     //API 5 Head Exchange List
     dispatch(headExchangeAction.get5HeadExchanges());
@@ -47,7 +49,7 @@ function App() {
     <StyledDiv>
       <Router>
         <Header />
-        <div class="container">
+        <div className="container">
           <Switch>
             <Route path="/markets">
               <Markets />

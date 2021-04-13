@@ -14,10 +14,10 @@ const Tickers = () =>{
                 </div>
                 <hr/>
                 <div className="row justify-content-between">
-                    <div className="col-4">
+                    <div className="col-12 col-md-4 mb-3">
                         <span>Filter By Exchange : </span><InputFilterExchange/>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <span>Search Emiten : </span><InputSearchTicker/>
                     </div>
                 </div>
