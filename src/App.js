@@ -9,12 +9,25 @@ import headTickerAction from "./redux/actions/headTickerAction";
 import exchangeActions from "./redux/actions/exchangeActions";
 //import eodActions from "./redux/actions/eodActions";
 
-
 import Home from "./pages/Home";
 import Eod from "./pages/Eod";
 import Markets from "./pages/Markets";
 import Tickers from "./pages/Tickers";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 200px;
+
+  @media screen and (max-width: 576px) {
+    padding-bottom: 500px;
+  }
+`;
 
 function App() {
   const dispatch = useDispatch();
@@ -31,9 +44,10 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <StyledDiv>
       <Router>
-        <div>
+        <Header />
+        <div class="container">
           <Switch>
             <Route path="/markets">
               <Markets />
@@ -49,8 +63,9 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Footer />
       </Router>
-    </div>
+    </StyledDiv>
   );
 }
 
