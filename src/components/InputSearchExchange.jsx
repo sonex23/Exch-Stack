@@ -9,7 +9,7 @@ const InputSearchExchange = () => {
                     <input 
                      type="text" 
                      id="search" 
-                     placeholder="Exchange Name or Mic" 
+                     placeholder="Market Name or Mic" 
                      className="form-control"
                      />
                     </div>
