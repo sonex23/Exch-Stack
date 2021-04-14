@@ -37,7 +37,7 @@ function App() {
 
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
-    //dispatch(exchangeCountryAction.getCountryExchange());
+    dispatch(exchangeCountryAction.getCountryExchange());
 
     //API 5 Head Exchange List
     //dispatch(headExchangeAction.get5HeadExchanges());
@@ -50,13 +50,13 @@ function App() {
         <Header />
         <div className="container">
           <Switch>
-            <Route path="/markets">
+            <Route path="/exchanges">
               <Markets />
             </Route>
-            <Route path="/emiten-list">
+            <Route path="/tickers/:mic">
               <Tickers />
             </Route>
-            <Route path="/details-emiten">
+            <Route path="/ticker/:mic/:symbol">
               <Eod />
             </Route>
             <Route path="/">

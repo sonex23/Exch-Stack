@@ -9,7 +9,7 @@ const Tickers = () =>{
             <div className="mt-3">
                 <div className="row">
                     <div className="col">
-                        <h1 className="text-center">Emiten List</h1>
+                        <h1 className="text-center">Stock Tickers</h1>
                     </div>
                 </div>
                 <hr/>

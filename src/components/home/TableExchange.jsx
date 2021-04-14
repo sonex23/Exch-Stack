@@ -7,7 +7,7 @@ const TableExchange = () => {
     
     return (
         <div>
-            <h2 className="mb-3">Markets</h2>
+            <h2 className="mb-3">Stock Exchanges</h2>
             <div className="card shadow p-3">
                 <table className="table table-striped table-responsive">
                     <thead>
@@ -33,7 +33,7 @@ const TableExchange = () => {
                         })}
                         <tr>
                             <td colSpan="5">
-                                <Link to="/markets">
+                                <Link to="/exchanges">
                                  <Button variant="primary" className="w-100">See all Exchange List</Button>
                                 </Link>
                             </td>

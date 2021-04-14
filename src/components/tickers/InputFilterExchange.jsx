@@ -1,16 +1,23 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import exchageMicActions from "../../redux/actions/exchageMicActions";
+import { useHistory, useParams } from 'react-router';
 
 const InputFilterExchange = () => {
     const exchangeList = useSelector((state)=>state.exchanges.exchangesList);
-    const dispatch = useDispatch();
+    const history = useHistory();
+    const { mic } = useParams();
+
     return (
         <div>
             <form>
-                <select name="filterByMic" id="filterByMic" className="form-control" onChange={(e)=> dispatch(exchageMicActions.storeMIC(e.target.value))}>
+                <select 
+                name="filterByMic" 
+                id="filterByMic" 
+                className="form-control" 
+                onChange={(e)=> history.push(`/tickers/${e.target.value}`)}>
                     {exchangeList.map((exchange, index)=>
-                      <option 
+                      <option
+                      selected={mic === exchange.mic? true:false} 
                       value={exchange.mic} 
                       key={index} 
                       >

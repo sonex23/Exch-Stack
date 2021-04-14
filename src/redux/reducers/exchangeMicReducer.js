@@ -1,7 +1,7 @@
 import {GET_EXCHANGE_MIC} from '../actionTypes';
 
 const InitiateState = {
-    exchangeMic: '',
+    exchangeMic: 'XNAS',
 }
 
 const exchangeMicReducer = (state = InitiateState, action) =>{

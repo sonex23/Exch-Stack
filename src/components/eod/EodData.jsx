@@ -1,21 +1,19 @@
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import { useParams } from 'react-router';
 import eodActions from "../../redux/actions/eodActions";
 import CanvasJSReact from '../charts/canvasjs.stock.react';
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
 
 const EodData = () => {
   const dispatch = useDispatch();
+  const { mic,symbol } = useParams();
+  const eod = useSelector((state) => state.eod.eodList);
   
-  
-  const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
-  const symbol = useSelector((state) => state.tickerSymbol.tickerSymbol);
 
   useEffect(()=>{
-    dispatch(eodActions.getEodByEmitenSymbolsAndExchange(symbol,exchangeMic))
+    dispatch(eodActions.getEodByEmitenSymbolsAndExchange(symbol,mic))
   },[])
-
-  const eod = useSelector((state) => state.eod.eodList);
     
     const dataPoints1 = eod.map((data, idx)=>{
         return {
@@ -115,7 +113,7 @@ const EodData = () => {
     
       const containerProps = {
         width: "100%",
-        height: "50%",
+        height: "500px",
         margin: "auto"
       };
 
