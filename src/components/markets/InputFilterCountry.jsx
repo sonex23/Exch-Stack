@@ -1,14 +1,19 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-// import exchageCountryAction from "../redux/actions/exchageCountryAction";
+import {useHistory} from 'react-router-dom';
+
 
 const InputFilterCountry = () => {
     const countryList = useSelector((state)=>state.country);
-    // const dispatch = useDispatch();
+    const history = useHistory();
     return (
         <div>
             <form>
-                <select name="filterByCountry" id="filterByCountry" className="form-control">
+                <select 
+                name="filterByCountry" 
+                id="filterByCountry" 
+                className="form-control"
+                onChange={(e)=> history.push(`/exchages/${e.target.value}`)}>
                     {countryList.map((country, index)=>
                       <option 
                       value={country} 

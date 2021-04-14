@@ -1,4 +1,5 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import tickersActions from "../../redux/actions/tickersActions";
 import tmpActions from '../../redux/actions/tmpActions';
@@ -6,11 +7,11 @@ import tmpActions from '../../redux/actions/tmpActions';
 
 const InputSearchTicker = () => {
     const searchValue = useSelector((state)=> state.tmp.searchInput);
-    const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
+    const { mic } = useParams();
     const dispatch = useDispatch();
     const handleSearch = (e) =>{
         e.preventDefault();
-        dispatch(tickersActions.getTickersByExchangeCodeAndTickerSymbol(searchValue,exchangeMic));
+        dispatch(tickersActions.getTickersByExchangeCodeAndTickerSymbol(searchValue,mic));
         tmpActions.storedSearchValue('');
     }
     return (

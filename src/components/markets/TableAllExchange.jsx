@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const TableAllExchange = () => {
-    const exchangesList = useSelector((state)=>state.exchanges.exchangesList)
+    const exchangesList = useSelector((state)=>state.exchanges.exchangeSearch)
     return (
         <div>
             <div className="card shadow p-3">

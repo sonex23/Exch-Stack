@@ -37,7 +37,8 @@ function App() {
 
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
-    dispatch(exchangeCountryAction.getCountryExchange());
+    dispatch(exchangeActions.setExchanges())
+    //dispatch(exchangeCountryAction.getCountryExchange());
 
     //API 5 Head Exchange List
     //dispatch(headExchangeAction.get5HeadExchanges());
