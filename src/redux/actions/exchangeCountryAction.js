@@ -7,8 +7,6 @@ const getCountryExchange = () => async (dispatch) => {
     const res = await Axios({
       url: `exchanges?access_key=${apiKey}`,
     });
-
-    console.log(res.data.data);
     dispatch({
       type: GET_COUNTRY_EXCHANGE,
       payload: res.data.data,

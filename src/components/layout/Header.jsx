@@ -16,8 +16,8 @@ function Header() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link><Link to="/" className="text-white mx-3">Home</Link></Nav.Link>
-                        <Nav.Link><Link to="/exchanges" className="text-white mx-3">Markets</Link></Nav.Link>
-                        <Nav.Link><Link to="/tickers/XNAS" className="text-white mx-3">Emiten</Link></Nav.Link>
+                        <Nav.Link><Link to="/exchanges" className="text-white mx-3">Exchanges List</Link></Nav.Link>
+                        <Nav.Link><Link to="/tickers/XNAS" className="text-white mx-3">Stock Tickers</Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </div>

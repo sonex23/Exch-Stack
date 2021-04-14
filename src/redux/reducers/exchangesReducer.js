@@ -3,6 +3,8 @@ import {GET_EXCHANGES} from '../actionTypes';
 const InitiateState = {
     exchangesList: [],
     exchangeSearch: [],
+    exchangeFiltered: [],
+    tmp: "USA",
     loading: true
 }
 
@@ -17,13 +19,27 @@ const exchangesReducer = (state = InitiateState, action) =>{
         case "SEARCH_EXCHANGE":
             return {
                 ...state,
-                exchangeSearch: action.payload,
+                exchangeFiltered: action.payload,
                 loading:false,
             }
         case "SET_EXCHANGES":
             return {
                 ...state,
                 exchangeSearch: action.payload,
+                loading:false,
+            }
+        case "GET_TMP":
+            return {
+                ...state,
+                tmp: action.payload,
+                loading:false,
+            }
+        case "FILTER_EXCHANGES":
+            return {
+                ...state,
+                exchangeFiltered: state.exchangeSearch.filter(
+                    (data)=>data.country === action.payload.country,
+                ),
                 loading:false,
             }
         default:

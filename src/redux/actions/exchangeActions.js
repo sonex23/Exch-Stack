@@ -50,10 +50,28 @@ const searchExchanges = (mic) => async (dispatch) => {
   }
 };
 
+const filterExchange = (country)=> {
+  return {
+    type: "FILTER_EXCHANGES",
+    payload: {
+      country : country
+    }
+  }
+}
+
+const setTmp = (tmp)=> {
+  return {
+    type: "GET_TMP",
+    payload: tmp
+  }
+}
+
 const exchangeActions = {
   getExchanges,
   searchExchanges,
-  setExchanges
+  setExchanges,
+  filterExchange,
+  setTmp
 };
 
 export default exchangeActions;

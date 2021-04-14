@@ -1,8 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import exchangeActions from '../../redux/actions/exchangeActions';
 
 const TableAllExchange = () => {
-    const exchangesList = useSelector((state)=>state.exchanges.exchangeSearch)
+    const exchangesList = useSelector((state)=>state.exchanges.exchangeFiltered);
+    const country = useSelector((state)=>state.exchanges.tmp)
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(exchangeActions.filterExchange(country))    
+    },[country])
+
     return (
         <div>
             <div className="card shadow p-3">

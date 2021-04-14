@@ -38,11 +38,11 @@ function App() {
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
     dispatch(exchangeActions.setExchanges())
-    //dispatch(exchangeCountryAction.getCountryExchange());
+    dispatch(exchangeCountryAction.getCountryExchange());
 
     //API 5 Head Exchange List
-    //dispatch(headExchangeAction.get5HeadExchanges());
-    //dispatch(headTickerAction.get5HeadTicker());
+    dispatch(headExchangeAction.get5HeadExchanges());
+    dispatch(headTickerAction.get5HeadTicker());
   }, []);
 
   return (
