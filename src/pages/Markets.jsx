@@ -1,7 +1,7 @@
 import React from 'react';
-import TableAllExchange from '../components/TableAllExchange';
-import InputFilterCountry from '../components/InputFilterCountry';
-import InputSearchExchange from '../components/InputSearchExchange';
+import TableAllExchange from '../components/markets/TableAllExchange';
+import InputFilterCountry from '../components/markets/InputFilterCountry';
+import InputSearchExchange from '../components/markets/InputSearchExchange';
 
 const Markets = () =>{
     return (

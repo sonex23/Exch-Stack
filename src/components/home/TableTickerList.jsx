@@ -34,7 +34,7 @@ const TableTickerList= () => {
                         })}
                         <tr>
                             <td colSpan="5">
-                                <Link to="/emiten-list">
+                                <Link to="/tickers/XNAS">
                                  <Button variant="primary" className="w-100">See all Ticker List</Button>
                                 </Link>
                             </td>

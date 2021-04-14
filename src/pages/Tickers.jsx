@@ -1,7 +1,7 @@
 import React from 'react';
-import InputFilterExchange from '../components/InputFilterExchange';
-import InputSearchTicker from '../components/InputSearchTicker';
-import TableAllTicker from '../components/TableAllTicker';
+import InputFilterExchange from '../components/tickers/InputFilterExchange';
+import InputSearchTicker from '../components/tickers/InputSearchTicker';
+import TableAllTicker from '../components/tickers/TableAllTicker';
 
 const Tickers = () =>{
     return (
@@ -9,7 +9,7 @@ const Tickers = () =>{
             <div className="mt-3">
                 <div className="row">
                     <div className="col">
-                        <h1 className="text-center">Emiten List</h1>
+                        <h1 className="text-center">Stock Tickers</h1>
                     </div>
                 </div>
                 <hr/>

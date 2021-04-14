@@ -1,7 +1,7 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import TableExchange from '../components/TableExchange';
-import TableTickerList from '../components/TableTickerList';
+import Hero from '../components/home/Hero';
+import TableExchange from '../components/home/TableExchange';
+import TableTickerList from '../components/home/TableTickerList';
 
 const Home = () => {
     return (

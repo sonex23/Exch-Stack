@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 import {Button} from "react-bootstrap";
-import tikersActions from '../redux/actions/tickersActions';
-import tickerSymbolActions from '../redux/actions/tickerSymbolActions';
+import tikersActions from '../../redux/actions/tickersActions';
 
 const TableAllTicker= () => {
     const dispatch = useDispatch();
     const [counter, setCounter] = useState(0)
+    const { mic } = useParams();
 
     const tickerList = useSelector((state) => state.tickers.tickersList);
-    const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
-    const symbol = useSelector((state) => state.tickerSymbol.tickerSymbol);
+    //const exchangeMic = useSelector((state) => state.exchangeMic.exchangeMic);
+    const exchangeMic = mic;
 
     useEffect(()=>{
-        //dispatch(tickersActions.getTickersByExchangeCode(exchangeMic));
         setCounter(0)
         dispatch(tikersActions.getLimitedTIcker(exchangeMic,counter.start))
     },[exchangeMic])
 
      const nextPage=()=>{
         setCounter(counter + 15)
-        console.log(counter)
         dispatch(tikersActions.getLimitedTIcker(exchangeMic,counter))
      }
      const prevPage=()=>{
         setCounter(counter - 15)
-        console.log(counter)
         dispatch(tikersActions.getLimitedTIcker(exchangeMic,counter))
      }
     
@@ -60,9 +57,10 @@ const TableAllTicker= () => {
                                     <td>
                                         <button 
                                          className="btn btn-primary" 
-                                         onClick={(e)=>dispatch(tickerSymbolActions.storeSymbol(data.symbol))}
                                         >
-                                        <Link to="/details-emiten" style={{ textDecoration: 'none', color: 'white' }}>
+                                        <Link 
+                                         to={`/ticker/${data.stock_exchange.mic}/${data.symbol}`} 
+                                         style={{ textDecoration: 'none', color: 'white' }}>
                                         Daily
                                         </Link>
                                         </button>

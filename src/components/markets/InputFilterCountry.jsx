@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-// import exchageCountryAction from "../redux/actions/exchageCountryAction";
+import {useHistory} from 'react-router-dom';
+import exchangeActions from '../../redux/actions/exchangeActions';
+
 
 const InputFilterCountry = () => {
     const countryList = useSelector((state)=>state.country);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+
     return (
         <div>
             <form>
-                <select name="filterByCountry" id="filterByCountry" className="form-control">
+                <select 
+                name="filterByCountry" 
+                id="filterByCountry" 
+                className="form-control"
+                onChange={(e)=>dispatch(exchangeActions.setTmp(e.target.value))}
+                >
                     {countryList.map((country, index)=>
                       <option 
-                      value={country} 
                       key={index} 
+                      value={country} 
                       >
                         {country}
                       </option>)

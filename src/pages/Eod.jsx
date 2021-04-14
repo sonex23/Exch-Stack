@@ -1,5 +1,5 @@
 import React from 'react';
-import EodData from "../components/EodData";
+import EodData from "../components/eod/EodData";
 
 const Eod = () =>{
     return (

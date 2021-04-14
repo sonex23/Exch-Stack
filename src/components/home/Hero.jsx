@@ -18,7 +18,7 @@ function Hero() {
                     <p className="mb-4">
                     Get all of information about stocks market, and Invest with no worry
                     </p>
-                    <Link to="markets">
+                    <Link to="/exchanges">
                      <StyledButton>See the Markets</StyledButton>
                     </Link>
                 </div>
