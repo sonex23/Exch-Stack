@@ -1,5 +1,5 @@
 # Exch Stack
-### _Analytics with Easy Ways_
+#### _Analytics with Easy Ways_
 
 
 ## Minimum Viable Product :
@@ -26,7 +26,7 @@ https://exch-stack.netlify.app
 
 ## Our Team
 
-| Nama | Github Link |
+| Name | Github Link |
 | ------ | ------ |
 | Radika Yudhistira Early | [https://github.com/ardhisr1] |
 | Sona Ermando | [https://github.com/sonex23] |

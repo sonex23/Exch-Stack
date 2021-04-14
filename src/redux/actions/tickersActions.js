@@ -57,7 +57,7 @@ const getTickersByExchangeCodeAndTickerSymbol=(search,mic)=> async (dispatch) =>
     try {
         const res = await Axios({
             method: 'GET',
-            url: `tickers?access_key=${apiKey}&search=${search}&xchange=${mic}`,
+            url: `tickers?access_key=${apiKey}&search=${search}&exchange=${mic}`,
         });
 
         dispatch({

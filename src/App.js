@@ -7,14 +7,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import headExchangeAction from "./redux/actions/headExchangeAction";
 import headTickerAction from "./redux/actions/headTickerAction";
 import exchangeActions from "./redux/actions/exchangeActions";
-//import eodActions from "./redux/actions/eodActions";
-
+import exchangeCountryAction from "./redux/actions/exchangeCountryAction";
 
 import Home from "./pages/Home";
 import Eod from "./pages/Eod";
 import Markets from "./pages/Markets";
 import Tickers from "./pages/Tickers";
 
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 200px;
+
+  @media screen and (max-width: 576px) {
+    padding-bottom: 500px;
+  }
+`;
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +37,8 @@ function App() {
 
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
+    dispatch(exchangeActions.setExchanges())
+    dispatch(exchangeCountryAction.getCountryExchange());
 
     //API 5 Head Exchange List
     dispatch(headExchangeAction.get5HeadExchanges());
@@ -31,17 +46,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <StyledDiv>
       <Router>
-        <div>
+        <Header />
+        <div className="container">
           <Switch>
-            <Route path="/markets">
+            <Route path="/exchanges">
               <Markets />
             </Route>
-            <Route path="/emiten-list">
+            <Route path="/tickers/:mic">
               <Tickers />
             </Route>
-            <Route path="/details-emiten">
+            <Route path="/ticker/:mic/:symbol">
               <Eod />
             </Route>
             <Route path="/">
@@ -49,8 +65,9 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Footer />
       </Router>
-    </div>
+    </StyledDiv>
   );
 }
 
