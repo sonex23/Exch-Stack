@@ -21,7 +21,6 @@ const Footer = () => {
             <h4>Exch Stack</h4>
             <span>Analytics with Easy Ways</span>
             <br/> <br/>
-            <img src="img/Exch-Stack-Header.png" alt="Logo" width="50%"/>
           </div>
           <div className="col-12 col-md-4 mb-4">
             <h4>Contact Us</h4>
