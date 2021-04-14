@@ -1,7 +1,7 @@
 import React from 'react';
-import InputFilterExchange from '../components/InputFilterExchange';
-import InputSearchTicker from '../components/InputSearchTicker';
-import TableAllTicker from '../components/TableAllTicker';
+import InputFilterExchange from '../components/tickers/InputFilterExchange';
+import InputSearchTicker from '../components/tickers/InputSearchTicker';
+import TableAllTicker from '../components/tickers/TableAllTicker';
 
 const Tickers = () =>{
     return (

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import eodActions from "../redux/actions/eodActions";
-import CanvasJSReact from './charts/canvasjs.stock.react';
+import eodActions from "../../redux/actions/eodActions";
+import CanvasJSReact from '../charts/canvasjs.stock.react';
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
 
 const EodData = () => {

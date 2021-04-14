@@ -8,15 +8,14 @@ import headExchangeAction from "./redux/actions/headExchangeAction";
 import headTickerAction from "./redux/actions/headTickerAction";
 import exchangeActions from "./redux/actions/exchangeActions";
 import exchangeCountryAction from "./redux/actions/exchangeCountryAction";
-//import eodActions from "./redux/actions/eodActions";
 
 import Home from "./pages/Home";
 import Eod from "./pages/Eod";
 import Markets from "./pages/Markets";
 import Tickers from "./pages/Tickers";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 import styled from "styled-components";
 
@@ -38,11 +37,11 @@ function App() {
 
     // API EXCHANGES LIST
     dispatch(exchangeActions.getExchanges());
-    dispatch(exchangeCountryAction.getCountryExchange());
+    //dispatch(exchangeCountryAction.getCountryExchange());
 
     //API 5 Head Exchange List
-    dispatch(headExchangeAction.get5HeadExchanges());
-    dispatch(headTickerAction.get5HeadTicker());
+    //dispatch(headExchangeAction.get5HeadExchanges());
+    //dispatch(headTickerAction.get5HeadTicker());
   }, []);
 
   return (

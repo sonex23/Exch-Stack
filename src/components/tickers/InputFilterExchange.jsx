@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import exchageMicActions from "../redux/actions/exchageMicActions";
+import exchageMicActions from "../../redux/actions/exchageMicActions";
 
 const InputFilterExchange = () => {
     const exchangeList = useSelector((state)=>state.exchanges.exchangesList);

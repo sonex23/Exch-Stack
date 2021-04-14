@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import tickersActions from "../redux/actions/tickersActions";
-import tmpActions from '../redux/actions/tmpActions';
+import tickersActions from "../../redux/actions/tickersActions";
+import tmpActions from '../../redux/actions/tmpActions';
 
 
 const InputSearchTicker = () => {
