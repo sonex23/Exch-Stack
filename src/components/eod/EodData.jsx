@@ -121,7 +121,6 @@ const EodData = () => {
     return (
         <div className="mt-3"> 
         <div>
-          {console.log(dataPoints1)}
           {
             // Reference: https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator
             dataPoints1 && 
